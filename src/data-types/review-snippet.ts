@@ -6,11 +6,17 @@
 //   bestRating?: number;
 //   worstRating?: number;
 // }
+import {
+  generateOrganization,
+  generatePerson,
+  IOrganization,
+  IPerson,
+} from './base';
 
-interface IReviewRating {
-  '@type': 'Rating';
-  ratingValue: number;
-}
+// interface IReviewRating {
+//   '@type': 'Rating';
+//   ratingValue: number;
+// }
 
 interface IAddress {
   '@type': 'PostalAddress';
@@ -31,22 +37,6 @@ interface IRestaurant {
   address: IAddress;
 }
 
-interface IAuthor {
-  '@type': 'Organization' | 'Person';
-  name: string;
-}
-
-interface ISimpleReview {
-  '@context': 'https://schema.org/';
-  '@type': 'Review';
-  itemReviewed: IRestaurant | Object;
-  reviewRating: IReviewRating;
-  name: string;
-  author: IAuthor;
-  reviewBody: string;
-  publisher: IAuthor;
-}
-
 export const generateSimpleReview = ({
   itemReviewed,
   ratingValue,
@@ -59,9 +49,9 @@ export const generateSimpleReview = ({
   ratingValue: number;
   name: string;
   reviewBody: string;
-  author: IAuthor;
-  publisher: IAuthor;
-}): ISimpleReview => ({
+  author: IPerson | IOrganization;
+  publisher: IOrganization;
+}) => ({
   '@context': 'https://schema.org/',
   '@type': 'Review',
   itemReviewed,
@@ -71,6 +61,6 @@ export const generateSimpleReview = ({
   },
   name,
   reviewBody,
-  author,
-  publisher,
+  author: generatePerson(author),
+  publisher: generateOrganization(publisher),
 });
