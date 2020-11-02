@@ -1,6 +1,4 @@
-export const sum = (a: number, b: number) => {
-  if ('development' === process.env.NODE_ENV) {
-    console.log('boop');
-  }
-  return a + b;
-};
+import { generateSimpleReview } from './data-types/review-snippet';
+import { generateSingleProduct } from './data-types/product';
+
+export { generateSimpleReview, generateSingleProduct };
