@@ -1,7 +1,7 @@
 import { generateSimpleReview } from '../src/data-types/review-snippet';
 
-describe('generateSimpleReview', () => {
-  it('works', () => {
+describe('review snippet', () => {
+  it('simple review', () => {
     const data = {
       itemReviewed: {
         '@type': 'Restaurant',
