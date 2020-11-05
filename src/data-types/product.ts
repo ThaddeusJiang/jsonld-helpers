@@ -1,20 +1,3 @@
-interface IOffer {
-  url?: string;
-  price: number;
-  priceCurrency: string; // 用于描述商品价格的货币，采用由三个字母表示的 ISO 4217 格式。
-  priceValidUntil: string;
-  availability?:
-    | 'Discontinued'
-    | 'InStock'
-    | 'InStoreOnly'
-    | 'LimitedAvailability'
-    | 'OnlineOnly'
-    | 'OutOfStock'
-    | 'PreOrder'
-    | 'PreSale'
-    | 'SoldOut';
-}
-
 /**
  * AggregateOffer 是一种 Offer，代表其他优惠的汇总。在商品中标记优惠汇总时
  */
@@ -24,6 +7,8 @@ interface IOffer {
 //   highPrice?: number;
 //   offerCount?: number;
 // }
+
+import { generateOffer, IOffer } from './base';
 
 export const generateSingleProduct = ({
   name,
@@ -67,9 +52,5 @@ export const generateSingleProduct = ({
   //   ratingValue: '4.4',
   //   reviewCount: '89',
   // },
-  offers: {
-    '@type': 'Offer',
-    url: 'https://example.com/anvil',
-    ...offer,
-  },
+  offers: generateOffer(offer),
 });

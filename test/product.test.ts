@@ -32,6 +32,7 @@ describe('product', () => {
       //   reviewCount: '89',
       // },
       offer: {
+        url: 'https://example.com/anvil',
         price: 119.99,
         priceCurrency: 'USD',
         priceValidUntil: '2020-11-20',
@@ -76,11 +77,10 @@ describe('product', () => {
       offers: {
         '@type': 'Offer',
         url: 'https://example.com/anvil',
-        priceCurrency: 'USD',
         price: 119.99,
+        priceCurrency: 'USD',
         priceValidUntil: '2020-11-20',
-
-        availability: 'InStock',
+        availability: 'https://schema.org/InStock',
       },
     };
     // @ts-ignore
