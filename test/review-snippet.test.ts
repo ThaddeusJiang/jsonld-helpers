@@ -1,4 +1,4 @@
-import { generateSimpleReview } from '../src/data-types/review-snippet';
+import { generateSimpleReview } from '../src';
 
 describe('review snippet', () => {
   it('simple review', () => {

@@ -1,4 +1,4 @@
-import { generateArticle } from '../src/data-types/article';
+import { generateArticle } from '../src';
 
 describe('Article', () => {
   it('AMP', () => {

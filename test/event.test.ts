@@ -1,4 +1,4 @@
-import { generateEvent } from '../src/data-types/event';
+import { generateEvent } from '../src';
 
 describe('Event', () => {
   it('basic event', () => {

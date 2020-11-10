@@ -1,4 +1,4 @@
-import { generateBreadcrumb } from '../src/data-types/breadcrumb';
+import { generateBreadcrumb } from '../src';
 
 describe('breadcrumb', () => {
   it('single breadcrumb', () => {

@@ -1,4 +1,4 @@
-import { generateLogo } from '../src/data-types/logo';
+import { generateLogo } from '../src';
 
 describe('logo', () => {
   it('basic', () => {

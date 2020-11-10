@@ -1,4 +1,4 @@
-import { generateSingleProduct } from '../src/data-types/product';
+import { generateSingleProduct } from '../src';
 
 describe('product', () => {
   it('single product', () => {
