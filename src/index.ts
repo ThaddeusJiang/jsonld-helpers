@@ -6,6 +6,7 @@ import { generateLogo } from './data-types/logo';
 import { generateSingleProduct } from './data-types/product';
 import { generateSimpleReview } from './data-types/review-snippet';
 import { generateSoftwareApp } from './data-types/software-app';
+import { generateVideo } from './data-types/video';
 
 export {
   generateArticle,
@@ -16,4 +17,5 @@ export {
   generateSingleProduct,
   generateSimpleReview,
   generateSoftwareApp,
+  generateVideo,
 };
