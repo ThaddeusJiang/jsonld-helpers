@@ -52,5 +52,7 @@ export interface IOffer {
 export const generateOffer = (data: IOffer) => ({
   ...data,
   '@type': 'Offer',
-  availability: `https://schema.org/${data?.availability ?? ''}`,
+  ...(data.availability
+    ? { availability: `https://schema.org/${data.availability}` }
+    : {}),
 });
